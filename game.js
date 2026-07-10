@@ -746,7 +746,7 @@ const STAGES = [
       "question": "기름을 수출하는 데 걸리는 시간은?",
       "answerA": "오일",
       "answerB": "하루",
-      "correct": "B"
+      "correct": "A"
     },
     {
       "id": 21,
@@ -956,7 +956,7 @@ const STAGES = [
       "question": "콩 한 알을 영어로 말하면?",
       "answerA": "원빈",
       "answerB": "One Bean",
-      "correct": "B"
+      "correct": "A"
     },
     {
       "id": 51,
@@ -998,7 +998,7 @@ const STAGES = [
       "question": "서울에 사는 거지 이름은?",
       "answerA": "설거지",
       "answerB": "서울이",
-      "correct": "B"
+      "correct": "A"
     },
     {
       "id": 57,
@@ -1348,7 +1348,7 @@ const STAGES = [
       "question": "말이 다리가 부러지면?",
       "answerA": "말뚝",
       "answerB": "목발",
-      "correct": "B"
+      "correct": "A"
     },
     {
       "id": 107,
