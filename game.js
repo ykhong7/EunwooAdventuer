@@ -659,75 +659,81 @@ const STAGES = [
   ],
   [
     {
-      "question": "세상에서 가장 뜨거운 바다는?",
-      "answerA": "열받아",
-      "answerB": "열해",
+      "question": "세상에서 가장 큰 코는?",
+      "answerA": "멕시코",
+      "answerB": "코끼리",
       "correct": "A"
     },
     {
-      "question": "왕이 넘어지면?",
-      "answerA": "왕창",
-      "answerB": "킹콩",
+      "question": "아몬드가 죽으면?",
+      "answerA": "다이아몬드",
+      "answerB": "볶은 아몬드",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 가난한 왕은?",
-      "answerA": "거지왕",
-      "answerB": "세종대왕",
+      "question": "왕이 헤엄을 치면?",
+      "answerA": "수영왕",
+      "answerB": "킹크랩",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 착한 사자는?",
+      "answerA": "봉사자",
+      "answerB": "백사자",
+      "correct": "A"
+    },
+    {
+      "question": "신이 화가 나면?",
+      "answerA": "신경질",
+      "answerB": "천둥",
       "correct": "A"
     },
     {
       "question": "자동차가 가장 싫어하는 음식은?",
-      "answerA": "카레",
-      "answerB": "김치",
-      "correct": "A"
+      "answerA": "김치",
+      "answerB": "카레",
+      "correct": "B"
     },
     {
-      "question": "소가 계단을 오르면?",
-      "answerA": "소오름",
-      "answerB": "황소",
-      "correct": "A"
+      "question": "세상에서 가장 무거운 싸움은?",
+      "answerA": "권투",
+      "answerB": "씨름",
+      "correct": "B"
     },
     {
-      "question": "바나나가 웃으면?",
-      "answerA": "바나나킥",
-      "answerB": "바나나우유",
-      "correct": "A"
+      "question": "세상에서 가장 뜨거운 과일은?",
+      "answerA": "수박",
+      "answerB": "천도복숭아",
+      "correct": "B"
     },
     {
       "question": "도둑이 가장 좋아하는 아이스크림은?",
       "answerA": "보석바",
-      "answerB": "메로나",
-      "correct": "A"
-    },
-    {
-      "question": "개가 사람을 가르치면?",
-      "answerA": "개인교습",
-      "answerB": "멍멍학교",
-      "correct": "A"
-    },
-    {
-      "question": "오리가 얼면?",
-      "answerA": "언덕",
-      "answerB": "냉동오리",
+      "answerB": "월드콘",
       "correct": "A"
     },
     {
       "question": "세상에서 가장 긴 떡은?",
-      "answerA": "가래떡",
-      "answerB": "인절미",
-      "correct": "A"
+      "answerA": "인절미",
+      "answerB": "가래떡",
+      "correct": "B"
+    },
+    {
+      "question": "개가 사람을 가르치면?",
+      "answerA": "애견학교",
+      "answerB": "개인교습",
+      "correct": "B"
+    },
+    {
+      "question": "물이 가장 싫어하는 물은?",
+      "answerA": "바닷물",
+      "answerB": "선물",
+      "correct": "B"
     },
     {
       "question": "연필이 화나면?",
       "answerA": "샤프해진다",
       "answerB": "몽당연필",
-      "correct": "A"
-    },
-    {
-      "question": "물이 싫어하는 물은?",
-      "answerA": "선물",
-      "answerB": "바닷물",
       "correct": "A"
     },
     {
@@ -737,69 +743,39 @@ const STAGES = [
       "correct": "A"
     },
     {
-      "question": "신발이 화나면?",
-      "answerA": "신발끈!",
-      "answerB": "운동화",
-      "correct": "A"
-    },
-    {
-      "question": "컴퓨터가 가장 싫어하는 벌레는?",
-      "answerA": "버그",
-      "answerB": "모기",
+      "question": "세상에서 가장 시원한 개는?",
+      "answerA": "개운하다",
+      "answerB": "진돗개",
       "correct": "A"
     },
     {
       "question": "사과가 공부를 잘하면?",
-      "answerA": "A플사과",
-      "answerB": "청사과",
+      "answerA": "청사과",
+      "answerB": "A플사과",
+      "correct": "B"
+    },
+    {
+      "question": "컴퓨터가 가장 싫어하는 벌레는?",
+      "answerA": "버그",
+      "answerB": "개미",
       "correct": "A"
     },
     {
-      "question": "닭이 가장 싫어하는 채소는?",
-      "answerA": "치킨무",
-      "answerB": "오이",
-      "correct": "A"
+      "question": "오리가 얼면?",
+      "answerA": "냉동오리",
+      "answerB": "언덕",
+      "correct": "B"
     },
     {
-      "question": "펭귄이 다니는 학교는?",
-      "answerA": "냉방학교",
-      "answerB": "남극학교",
-      "correct": "A"
+      "question": "가장 돈이 많은 새는?",
+      "answerA": "독수리",
+      "answerB": "부엉이",
+      "correct": "B"
     },
     {
       "question": "시계가 배고프면?",
       "answerA": "밥시계",
-      "answerB": "시계침",
-      "correct": "A"
-    },
-    {
-      "question": "가장 무서운 전화는?",
-      "answerA": "벌벌전화",
-      "answerB": "휴대전화",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 큰 코는?",
-      "answerA": "멕시코",
-      "answerB": "코끼리",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 야한 닭은?",
-      "answerA": "홀닥",
-      "answerB": "후라이드",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 쉬운 숫자는?",
-      "answerA": "십구만",
-      "answerB": "1",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 뜨거운 과일은?",
-      "answerA": "천도복숭아",
-      "answerB": "수박",
+      "answerB": "알람시계",
       "correct": "A"
     },
     {
@@ -809,51 +785,51 @@ const STAGES = [
       "correct": "A"
     },
     {
-      "question": "가장 돈을 많이 버는 새는?",
-      "answerA": "부엉이(부자의 엉이)",
-      "answerB": "독수리",
+      "question": "사자가 시험을 잘 보면?",
+      "answerA": "백사자",
+      "answerB": "라이언킹",
       "correct": "A"
     },
     {
-      "question": "가장 가벼운 숫자는?",
-      "answerA": "구(9)",
-      "answerB": "일(1)",
+      "question": "세상에서 가장 멋있는 사자는?",
+      "answerA": "라이언킹",
+      "answerB": "숫사자",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 힘센 말은?",
-      "answerA": "말힘",
-      "answerB": "경주마",
+      "question": "닭이 가장 싫어하는 채소는?",
+      "answerA": "치킨무",
+      "answerB": "오이",
       "correct": "A"
     },
     {
-      "question": "가장 무서운 비는?",
-      "answerA": "비명",
-      "answerB": "장대비",
+      "question": "소가 계단을 오르면?",
+      "answerA": "황소",
+      "answerB": "소오름",
+      "correct": "B"
+    },
+    {
+      "question": "벌이 화나면?",
+      "answerA": "벌벌 떤다",
+      "answerB": "윙윙 난다",
       "correct": "A"
     },
     {
-      "question": "소가 웃으면?",
-      "answerA": "우하하",
-      "answerB": "음머",
-      "correct": "A"
+      "question": "세상에서 가장 무서운 전화는?",
+      "answerA": "휴대전화",
+      "answerB": "벌벌전화",
+      "correct": "B"
     },
     {
-      "question": "가장 바쁜 벌은?",
-      "answerA": "바쁘벌",
-      "answerB": "꿀벌",
-      "correct": "A"
+      "question": "바나나가 웃으면?",
+      "answerA": "바나나우유",
+      "answerB": "바나나킥",
+      "correct": "B"
     },
     {
-      "question": "오징어가 춤추면?",
-      "answerA": "오징어댄스",
-      "answerB": "문어춤",
-      "correct": "A"
-    },
-    {
-      "question": "딸기가 회사에 가면?",
-      "answerA": "딸기과장",
-      "answerB": "딸기사원",
+      "question": "딸기가 회사에 입사하면?",
+      "answerA": "딸기사원",
+      "answerB": "딸기과장",
       "correct": "A"
     },
     {
@@ -863,99 +839,123 @@ const STAGES = [
       "correct": "A"
     },
     {
-      "question": "눈이 화나면?",
-      "answerA": "눈보라",
-      "answerB": "함박눈",
-      "correct": "A"
-    },
-    {
-      "question": "사자가 시험을 잘 보면?",
-      "answerA": "백사자",
-      "answerB": "숫사자",
-      "correct": "A"
-    },
-    {
-      "question": "원숭이가 목욕하면?",
-      "answerA": "깨끗몽",
-      "answerB": "몽키",
-      "correct": "A"
-    },
-    {
-      "question": "가장 시원한 개는?",
-      "answerA": "개운하다",
-      "answerB": "진돗개",
-      "correct": "A"
-    },
-    {
-      "question": "돼지가 웃으면?",
-      "answerA": "꿀잼",
-      "answerB": "꿀꿀",
-      "correct": "A"
-    },
-    {
       "question": "문어가 경찰이 되면?",
       "answerA": "문어수사대",
       "answerB": "해양경찰",
       "correct": "A"
     },
     {
-      "question": "벌이 화나면?",
-      "answerA": "벌벌 떤다",
-      "answerB": "윙윙 난다",
+      "question": "눈이 화나면?",
+      "answerA": "눈보라",
+      "answerB": "함박눈",
       "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 바쁜 벌은?",
+      "answerA": "바쁘벌",
+      "answerB": "꿀벌",
+      "correct": "A"
+    },
+    {
+      "question": "가장 힘이 센 말은?",
+      "answerA": "경주마",
+      "answerB": "말힘",
+      "correct": "B"
+    },
+    {
+      "question": "가장 슬픈 도시는?",
+      "answerA": "서울",
+      "answerB": "울산",
+      "correct": "B"
+    },
+    {
+      "question": "가장 억울한 도형은?",
+      "answerA": "원통",
+      "answerB": "삼각형",
+      "correct": "A"
+    },
+    {
+      "question": "가장 쉬운 숫자는?",
+      "answerA": "십구만",
+      "answerB": "일",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 빠른 닭은?",
+      "answerA": "치킨",
+      "answerB": "후다닥",
+      "correct": "B"
     },
     {
       "question": "세상에서 가장 긴 음식은?",
-      "answerA": "국수",
-      "answerB": "라면",
+      "answerA": "라면",
+      "answerB": "국수",
+      "correct": "B"
+    },
+    {
+      "question": "세상에서 가장 더러운 집은?",
+      "answerA": "돼지우리",
+      "answerB": "쓰레기집",
       "correct": "A"
     },
     {
-      "question": "아몬드가 죽으면?",
-      "answerA": "다이아몬드",
-      "answerB": "볶음아몬드",
+      "question": "왕이 넘어지면?",
+      "answerA": "킹콩",
+      "answerB": "왕창",
+      "correct": "B"
+    },
+    {
+      "question": "오징어가 춤추면?",
+      "answerA": "문어춤",
+      "answerB": "오징어댄스",
+      "correct": "B"
+    },
+    {
+      "question": "가장 무서운 비는?",
+      "answerA": "비명",
+      "answerB": "장대비",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 지루한 중학교는?",
-      "answerA": "로딩중",
-      "answerB": "기다림중",
-      "correct": "A"
+      "question": "세상에서 가장 뜨거운 바다는?",
+      "answerA": "홍해",
+      "answerB": "열받아",
+      "correct": "B"
     },
     {
-      "question": "가장 멋있는 사자는?",
-      "answerA": "라이언킹",
-      "answerB": "백사자",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 착한 사자는?",
-      "answerA": "봉사자",
-      "answerB": "숫사자",
-      "correct": "A"
-    },
-    {
-      "question": "가장 뜨거운 전화는?",
-      "answerA": "불통전화",
-      "answerB": "휴대전화",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 무거운 싸움은?",
-      "answerA": "씨름",
-      "answerB": "권투",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 행복한 바지는?",
+      "question": "가장 행복한 바지는?",
       "answerA": "웃음바지",
       "answerB": "청바지",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 긴 영화는?",
-      "answerA": "롱테이크",
-      "answerB": "반지의 제왕",
+      "question": "펭귄이 다니는 학교는?",
+      "answerA": "남극학교",
+      "answerB": "냉방학교",
+      "correct": "B"
+    },
+    {
+      "question": "가장 가난한 왕은?",
+      "answerA": "세종대왕",
+      "answerB": "거지왕",
+      "correct": "B"
+    },
+    {
+      "question": "세상에서 가장 오래 자는 동물은?",
+      "answerA": "곰",
+      "answerB": "잠만보",
+      "correct": "A"
+    },
+    {
+      "question": "가장 많이 먹는 벌레는?",
+      "answerA": "먹보벌레",
+      "answerB": "반딧불이",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 놀라운 오리는?",
+      "answerA": "깜짝오리",
+      "answerB": "오리무중",
       "correct": "A"
     }
   ]

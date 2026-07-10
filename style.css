@@ -174,11 +174,14 @@ button { font: inherit; }
 .finish-card h2 { margin: 6px 0 8px; font-size: clamp(26px, 4vw, 46px); }
 .finish-card p { margin: 0 0 20px; font-size: clamp(15px, 2vw, 22px); }
 .finish-sprite {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto;
-  background: url("assets/fin.png") center/100px 100px no-repeat;
-  transform: scale(1.55);
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  background-image: url("assets/fin.png");
+  background-repeat: no-repeat;
+  background-size: 400px 100px;
+  animation: finFrames .65s steps(4) infinite;
+  transform: scale(1.2);
 }
 .hidden { display: none !important; }
 
@@ -316,3 +319,5 @@ button { font: inherit; }
   font-size: clamp(13px, 1.7vw, 20px);
   font-weight: 900;
 }
+
+@keyframes finFrames { to { background-position-x: -400px; } }
