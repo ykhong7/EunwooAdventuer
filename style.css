@@ -321,3 +321,31 @@ button { font: inherit; }
 }
 
 @keyframes finFrames { to { background-position-x: -400px; } }
+
+
+/* v0.2.4 좌측 상단 진행 HUD */
+.score {
+  left: 2.5%;
+  top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 145px;
+  padding: .65em .9em;
+  border-radius: 16px;
+  font-size: clamp(12px, 1.6vw, 18px);
+  line-height: 1.25;
+}
+.score span {
+  display: block;
+  white-space: nowrap;
+}
+.score .hud-stage {
+  margin-bottom: 2px;
+  font-size: 1.15em;
+  font-weight: 1000;
+}
+.stage-label {
+  display: none !important;
+}

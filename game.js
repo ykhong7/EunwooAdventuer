@@ -1,358 +1,308 @@
-const TARGET_SCORE = 5;
+const STAGE_TARGETS = [5, 5, 10];
 const WALK_DURATION = 2000;
 const REACTION_DURATION = 1200;
 
 const STAGES = [
   [
     {
-      "id": 1,
-      "question": "바나나가 웃으면?",
-      "answerA": "바나나우유",
-      "answerB": "바나나킥",
-      "correct": "B"
-    },
-    {
-      "id": 2,
-      "question": "소가 계단을 오르면?",
-      "answerA": "소오름",
-      "answerB": "황소",
+      "question": "세상에서 가장 큰 코는?",
+      "answerA": "멕시코",
+      "answerB": "코끼리",
       "correct": "A"
     },
     {
-      "id": 3,
-      "question": "왕이 넘어지면?",
-      "answerA": "킹콩",
-      "answerB": "왕창",
-      "correct": "B"
-    },
-    {
-      "id": 4,
-      "question": "오리가 얼면?",
-      "answerA": "언덕",
-      "answerB": "냉동오리",
+      "question": "아몬드가 죽으면?",
+      "answerA": "다이아몬드",
+      "answerB": "볶은 아몬드",
       "correct": "A"
     },
     {
-      "id": 5,
+      "question": "왕이 헤엄을 치면?",
+      "answerA": "수영왕",
+      "answerB": "킹크랩",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 착한 사자는?",
+      "answerA": "봉사자",
+      "answerB": "백사자",
+      "correct": "A"
+    },
+    {
+      "question": "신이 화가 나면?",
+      "answerA": "신경질",
+      "answerB": "천둥",
+      "correct": "A"
+    },
+    {
       "question": "자동차가 가장 싫어하는 음식은?",
-      "answerA": "카레",
-      "answerB": "김치",
-      "correct": "A"
+      "answerA": "김치",
+      "answerB": "카레",
+      "correct": "B"
     },
     {
-      "id": 6,
-      "question": "도둑이 좋아하는 아이스크림은?",
+      "question": "세상에서 가장 무거운 싸움은?",
+      "answerA": "권투",
+      "answerB": "씨름",
+      "correct": "B"
+    },
+    {
+      "question": "세상에서 가장 뜨거운 과일은?",
+      "answerA": "수박",
+      "answerB": "천도복숭아",
+      "correct": "B"
+    },
+    {
+      "question": "도둑이 가장 좋아하는 아이스크림은?",
       "answerA": "보석바",
       "answerB": "월드콘",
       "correct": "A"
     },
     {
-      "id": 7,
-      "question": "병아리가 먹는 약은?",
-      "answerA": "감기약",
-      "answerB": "삐약",
-      "correct": "B"
-    },
-    {
-      "id": 8,
-      "question": "개가 사람을 가르치면?",
-      "answerA": "개인교습",
-      "answerB": "멍멍수업",
-      "correct": "A"
-    },
-    {
-      "id": 9,
       "question": "세상에서 가장 긴 떡은?",
-      "answerA": "가래떡",
-      "answerB": "송편",
-      "correct": "A"
-    },
-    {
-      "id": 10,
-      "question": "우유가 넘어지면?",
-      "answerA": "흰우유",
-      "answerB": "아야유",
+      "answerA": "인절미",
+      "answerB": "가래떡",
       "correct": "B"
     },
     {
-      "id": 11,
-      "question": "공이 웃으면?",
-      "answerA": "축구공",
-      "answerB": "빵!",
+      "question": "개가 사람을 가르치면?",
+      "answerA": "애견학교",
+      "answerB": "개인교습",
       "correct": "B"
     },
     {
-      "id": 12,
-      "question": "가장 작은 새는?",
-      "answerA": "참새",
-      "answerB": "눈곱새",
+      "question": "물이 가장 싫어하는 물은?",
+      "answerA": "바닷물",
+      "answerB": "선물",
       "correct": "B"
     },
     {
-      "id": 13,
-      "question": "가장 추운 바다는?",
-      "answerA": "썰렁해",
-      "answerB": "동해",
-      "correct": "A"
-    },
-    {
-      "id": 14,
-      "question": "사과가 공부를 잘하면?",
-      "answerA": "애플사과",
-      "answerB": "청사과",
-      "correct": "A"
-    },
-    {
-      "id": 15,
-      "question": "신발이 화나면?",
-      "answerA": "신발끈!",
-      "answerB": "운동화",
-      "correct": "A"
-    },
-    {
-      "id": 16,
-      "question": "가장 가난한 왕은?",
-      "answerA": "거지왕",
-      "answerB": "세종대왕",
-      "correct": "A"
-    },
-    {
-      "id": 17,
       "question": "연필이 화나면?",
       "answerA": "샤프해진다",
       "answerB": "몽당연필",
       "correct": "A"
     },
     {
-      "id": 18,
-      "question": "빵이 목욕하면?",
-      "answerA": "식빵",
-      "answerB": "촉촉빵",
+      "question": "비가 자기소개하면?",
+      "answerA": "비입니다",
+      "answerB": "비가 와요",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 시원한 개는?",
+      "answerA": "개운하다",
+      "answerB": "진돗개",
+      "correct": "A"
+    },
+    {
+      "question": "사과가 공부를 잘하면?",
+      "answerA": "청사과",
+      "answerB": "A플사과",
       "correct": "B"
     },
     {
-      "id": 19,
-      "question": "토끼가 가장 좋아하는 집은?",
-      "answerA": "당근하우스",
-      "answerB": "토끼굴",
-      "correct": "A"
-    },
-    {
-      "id": 20,
-      "question": "축구공이 졸리면?",
-      "answerA": "쿨쿨공",
-      "answerB": "축구화",
-      "correct": "A"
-    },
-    {
-      "id": 21,
-      "question": "소금을 좋아하는 새는?",
-      "answerA": "짠새",
-      "answerB": "참새",
-      "correct": "A"
-    },
-    {
-      "id": 22,
-      "question": "비가 자기소개하면?",
-      "answerA": "비입니다.",
-      "answerB": "비 와요",
-      "correct": "A"
-    },
-    {
-      "id": 23,
       "question": "컴퓨터가 가장 싫어하는 벌레는?",
       "answerA": "버그",
-      "answerB": "모기",
+      "answerB": "개미",
       "correct": "A"
     },
     {
-      "id": 24,
-      "question": "닭이 웃으면?",
-      "answerA": "꼬끼오",
-      "answerB": "치킨",
+      "question": "오리가 얼면?",
+      "answerA": "냉동오리",
+      "answerB": "언덕",
       "correct": "B"
     },
     {
-      "id": 25,
-      "question": "세상에서 가장 빠른 닭은?",
-      "answerA": "후다닥",
-      "answerB": "치킨",
-      "correct": "A"
-    },
-    {
-      "id": 26,
-      "question": "개미가 용돈을 받으면?",
-      "answerA": "개미원",
-      "answerB": "천 원",
-      "correct": "A"
-    },
-    {
-      "id": 27,
-      "question": "달이 좋아하는 과자는?",
-      "answerA": "새우깡",
-      "answerB": "별사탕",
+      "question": "가장 돈이 많은 새는?",
+      "answerA": "독수리",
+      "answerB": "부엉이",
       "correct": "B"
     },
     {
-      "id": 28,
+      "question": "시계가 배고프면?",
+      "answerA": "밥시계",
+      "answerB": "알람시계",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 차가운 과일은?",
+      "answerA": "배",
+      "answerB": "참외",
+      "correct": "A"
+    },
+    {
+      "question": "사자가 시험을 잘 보면?",
+      "answerA": "백사자",
+      "answerB": "라이언킹",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 멋있는 사자는?",
+      "answerA": "라이언킹",
+      "answerB": "숫사자",
+      "correct": "A"
+    },
+    {
+      "question": "닭이 가장 싫어하는 채소는?",
+      "answerA": "치킨무",
+      "answerB": "오이",
+      "correct": "A"
+    },
+    {
+      "question": "소가 계단을 오르면?",
+      "answerA": "황소",
+      "answerB": "소오름",
+      "correct": "B"
+    },
+    {
       "question": "벌이 화나면?",
       "answerA": "벌벌 떤다",
       "answerB": "윙윙 난다",
       "correct": "A"
     },
     {
-      "id": 29,
-      "question": "돼지가 잘하는 운동은?",
-      "answerA": "돈까스(?)",
-      "answerB": "축구",
-      "correct": "A"
-    },
-    {
-      "id": 30,
-      "question": "감이 경찰이 되면?",
-      "answerA": "단속감",
-      "answerB": "홍시",
-      "correct": "A"
-    },
-    {
-      "id": 31,
-      "question": "가장 시원한 개는?",
-      "answerA": "진돗개",
-      "answerB": "개운하다",
+      "question": "세상에서 가장 무서운 전화는?",
+      "answerA": "휴대전화",
+      "answerB": "벌벌전화",
       "correct": "B"
     },
     {
-      "id": 32,
-      "question": "오징어가 춤추면?",
-      "answerA": "오징어댄스",
-      "answerB": "문어춤",
+      "question": "바나나가 웃으면?",
+      "answerA": "바나나우유",
+      "answerB": "바나나킥",
+      "correct": "B"
+    },
+    {
+      "question": "딸기가 회사에 입사하면?",
+      "answerA": "딸기사원",
+      "answerB": "딸기과장",
       "correct": "A"
     },
     {
-      "id": 33,
-      "question": "딸기가 회사에 가면?",
-      "answerA": "딸기과장",
-      "answerB": "딸기사원",
-      "correct": "A"
-    },
-    {
-      "id": 34,
       "question": "햄버거가 노래하면?",
       "answerA": "버거송",
       "answerB": "치즈송",
       "correct": "A"
     },
     {
-      "id": 35,
-      "question": "시계가 배고프면?",
-      "answerA": "시계침",
-      "answerB": "밥시계",
-      "correct": "B"
-    },
-    {
-      "id": 36,
-      "question": "가장 무서운 전화는?",
-      "answerA": "벌벌전화",
-      "answerB": "휴대전화",
-      "correct": "A"
-    },
-    {
-      "id": 37,
-      "question": "원숭이가 목욕하면?",
-      "answerA": "깨끗몽",
-      "answerB": "몽키",
-      "correct": "A"
-    },
-    {
-      "id": 38,
-      "question": "사자가 시험을 잘 보면?",
-      "answerA": "백사자",
-      "answerB": "숫사자",
-      "correct": "A"
-    },
-    {
-      "id": 39,
-      "question": "물고기가 싫어하는 물은?",
-      "answerA": "선물",
-      "answerB": "바닷물",
-      "correct": "A"
-    },
-    {
-      "id": 40,
-      "question": "세상에서 가장 더러운 집은?",
-      "answerA": "쓰레기집",
-      "answerB": "돼지우리",
-      "correct": "B"
-    },
-    {
-      "id": 41,
       "question": "문어가 경찰이 되면?",
       "answerA": "문어수사대",
       "answerB": "해양경찰",
       "correct": "A"
     },
     {
-      "id": 42,
-      "question": "돼지가 웃으면?",
-      "answerA": "꿀꿀",
-      "answerB": "꿀잼",
-      "correct": "B"
-    },
-    {
-      "id": 43,
-      "question": "고양이가 좋아하는 자동차는?",
-      "answerA": "스포츠카",
-      "answerB": "야옹카",
-      "correct": "B"
-    },
-    {
-      "id": 44,
-      "question": "강아지가 좋아하는 책은?",
-      "answerA": "멍문학",
-      "answerB": "동화책",
-      "correct": "A"
-    },
-    {
-      "id": 45,
       "question": "눈이 화나면?",
       "answerA": "눈보라",
       "answerB": "함박눈",
       "correct": "A"
     },
     {
-      "id": 46,
-      "question": "세상에서 가장 뜨거운 과일은?",
-      "answerA": "천도복숭아",
-      "answerB": "수박",
-      "correct": "A"
-    },
-    {
-      "id": 47,
-      "question": "말이 넘어지면?",
-      "answerA": "말아톤",
-      "answerB": "낙마",
-      "correct": "B"
-    },
-    {
-      "id": 48,
-      "question": "펭귄이 다니는 학교는?",
-      "answerA": "냉방학교",
-      "answerB": "남극학교",
-      "correct": "A"
-    },
-    {
-      "id": 49,
-      "question": "가장 부지런한 벌은?",
+      "question": "세상에서 가장 바쁜 벌은?",
       "answerA": "바쁘벌",
       "answerB": "꿀벌",
       "correct": "A"
     },
     {
-      "id": 50,
-      "question": "물이 가장 좋아하는 음악은?",
-      "answerA": "발라드",
-      "answerB": "흐르는 음악",
+      "question": "가장 힘이 센 말은?",
+      "answerA": "경주마",
+      "answerB": "말힘",
       "correct": "B"
+    },
+    {
+      "question": "가장 슬픈 도시는?",
+      "answerA": "서울",
+      "answerB": "울산",
+      "correct": "B"
+    },
+    {
+      "question": "가장 억울한 도형은?",
+      "answerA": "원통",
+      "answerB": "삼각형",
+      "correct": "A"
+    },
+    {
+      "question": "가장 쉬운 숫자는?",
+      "answerA": "십구만",
+      "answerB": "일",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 빠른 닭은?",
+      "answerA": "치킨",
+      "answerB": "후다닥",
+      "correct": "B"
+    },
+    {
+      "question": "세상에서 가장 긴 음식은?",
+      "answerA": "라면",
+      "answerB": "국수",
+      "correct": "B"
+    },
+    {
+      "question": "세상에서 가장 더러운 집은?",
+      "answerA": "돼지우리",
+      "answerB": "쓰레기집",
+      "correct": "A"
+    },
+    {
+      "question": "왕이 넘어지면?",
+      "answerA": "킹콩",
+      "answerB": "왕창",
+      "correct": "B"
+    },
+    {
+      "question": "오징어가 춤추면?",
+      "answerA": "문어춤",
+      "answerB": "오징어댄스",
+      "correct": "B"
+    },
+    {
+      "question": "가장 무서운 비는?",
+      "answerA": "비명",
+      "answerB": "장대비",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 뜨거운 바다는?",
+      "answerA": "홍해",
+      "answerB": "열받아",
+      "correct": "B"
+    },
+    {
+      "question": "가장 행복한 바지는?",
+      "answerA": "웃음바지",
+      "answerB": "청바지",
+      "correct": "A"
+    },
+    {
+      "question": "펭귄이 다니는 학교는?",
+      "answerA": "남극학교",
+      "answerB": "냉방학교",
+      "correct": "B"
+    },
+    {
+      "question": "가장 가난한 왕은?",
+      "answerA": "세종대왕",
+      "answerB": "거지왕",
+      "correct": "B"
+    },
+    {
+      "question": "세상에서 가장 오래 자는 동물은?",
+      "answerA": "곰",
+      "answerB": "잠만보",
+      "correct": "A"
+    },
+    {
+      "question": "가장 많이 먹는 벌레는?",
+      "answerA": "먹보벌레",
+      "answerB": "반딧불이",
+      "correct": "A"
+    },
+    {
+      "question": "세상에서 가장 놀라운 오리는?",
+      "answerA": "깜짝오리",
+      "answerB": "오리무중",
+      "correct": "A"
     }
   ],
   [
@@ -659,303 +609,843 @@ const STAGES = [
   ],
   [
     {
-      "question": "세상에서 가장 큰 코는?",
-      "answerA": "멕시코",
-      "answerB": "코끼리",
-      "correct": "A"
-    },
-    {
-      "question": "아몬드가 죽으면?",
-      "answerA": "다이아몬드",
-      "answerB": "볶은 아몬드",
-      "correct": "A"
-    },
-    {
-      "question": "왕이 헤엄을 치면?",
-      "answerA": "수영왕",
-      "answerB": "킹크랩",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 착한 사자는?",
-      "answerA": "봉사자",
-      "answerB": "백사자",
-      "correct": "A"
-    },
-    {
-      "question": "신이 화가 나면?",
-      "answerA": "신경질",
-      "answerB": "천둥",
-      "correct": "A"
-    },
-    {
-      "question": "자동차가 가장 싫어하는 음식은?",
-      "answerA": "김치",
-      "answerB": "카레",
+      "id": 1,
+      "question": "왕이 양쪽에 있으면?",
+      "answerA": "좌왕우왕",
+      "answerB": "우왕좌왕",
       "correct": "B"
     },
     {
-      "question": "세상에서 가장 무거운 싸움은?",
-      "answerA": "권투",
-      "answerB": "씨름",
+      "id": 2,
+      "question": "침대에서 가장 야한 것은?",
+      "answerA": "베개",
+      "answerB": "이불",
       "correct": "B"
     },
     {
-      "question": "세상에서 가장 뜨거운 과일은?",
-      "answerA": "수박",
-      "answerB": "천도복숭아",
-      "correct": "B"
-    },
-    {
-      "question": "도둑이 가장 좋아하는 아이스크림은?",
-      "answerA": "보석바",
-      "answerB": "월드콘",
+      "id": 3,
+      "question": "비 오는 날 먹는 햄은?",
+      "answerA": "습햄",
+      "answerB": "스팸",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 긴 떡은?",
-      "answerA": "인절미",
-      "answerB": "가래떡",
+      "id": 4,
+      "question": "몸에 안 좋은 청바지는?",
+      "answerA": "찢어진 청바지",
+      "answerB": "유해진",
       "correct": "B"
     },
     {
-      "question": "개가 사람을 가르치면?",
-      "answerA": "애견학교",
-      "answerB": "개인교습",
+      "id": 5,
+      "question": "바람이 귀엽게 부는 곳은?",
+      "answerA": "분당",
+      "answerB": "강풍",
+      "correct": "A"
+    },
+    {
+      "id": 6,
+      "question": "부엉이가 물에 빠지면?",
+      "answerA": "첨부엉 첨부엉",
+      "answerB": "물부엉",
+      "correct": "A"
+    },
+    {
+      "id": 7,
+      "question": "딸기가 직장을 잃으면?",
+      "answerA": "딸기주스",
+      "answerB": "딸기시럽",
       "correct": "B"
     },
     {
-      "question": "물이 가장 싫어하는 물은?",
+      "id": 8,
+      "question": "빵이 목장에 간 이유는?",
+      "answerA": "소보로",
+      "answerB": "우유를 마시려고",
+      "correct": "A"
+    },
+    {
+      "id": 9,
+      "question": "형제가 싸울 때 동생 편만 드는 세상은?",
+      "answerA": "동생 나라",
+      "answerB": "형편없는 세상",
+      "correct": "B"
+    },
+    {
+      "id": 10,
+      "question": "3월에 대학생을 절대 못 이기는 이유는?",
+      "answerA": "개강하니까",
+      "answerB": "시험기간이라",
+      "correct": "A"
+    },
+    {
+      "id": 11,
+      "question": "9가 자기소개하면?",
+      "answerA": "전구",
+      "answerB": "구번",
+      "correct": "A"
+    },
+    {
+      "id": 12,
+      "question": "가장 인기 있는 벌레는?",
+      "answerA": "스타벅스",
+      "answerB": "반딧불이",
+      "correct": "A"
+    },
+    {
+      "id": 13,
+      "question": "가장 폭력적인 동물은?",
+      "answerA": "팬다",
+      "answerB": "호랑이",
+      "correct": "A"
+    },
+    {
+      "id": 14,
+      "question": "감기에 또 걸리면?",
+      "answerA": "재감기",
+      "answerB": "되감기",
+      "correct": "B"
+    },
+    {
+      "id": 15,
+      "question": "거북이가 소화제를 먹은 이유는?",
+      "answerA": "속이 거북해서",
+      "answerB": "배가 고파서",
+      "correct": "A"
+    },
+    {
+      "id": 16,
+      "question": "고등학생들이 싫어하는 나무는?",
+      "answerA": "은행나무",
+      "answerB": "야자나무",
+      "correct": "B"
+    },
+    {
+      "id": 17,
+      "question": "고추장보다 높은 사람은?",
+      "answerA": "초고추장",
+      "answerB": "된장",
+      "correct": "A"
+    },
+    {
+      "id": 18,
+      "question": "과자가 자기소개하면?",
+      "answerA": "전과자",
+      "answerB": "새우깡",
+      "correct": "A"
+    },
+    {
+      "id": 19,
+      "question": "귤이 감을 보고 한 말은?",
+      "answerA": "유감",
+      "answerB": "반갑다",
+      "correct": "A"
+    },
+    {
+      "id": 20,
+      "question": "기름을 수출하는 데 걸리는 시간은?",
+      "answerA": "오일",
+      "answerB": "하루",
+      "correct": "B"
+    },
+    {
+      "id": 21,
+      "question": "김밥이 죽으면 어디로 갈까?",
+      "answerA": "김밥천국",
+      "answerB": "분식집",
+      "correct": "A"
+    },
+    {
+      "id": 22,
+      "question": "깨가 죽으면?",
+      "answerA": "볶음깨",
+      "answerB": "주근깨",
+      "correct": "B"
+    },
+    {
+      "id": 23,
+      "question": "꽃게를 냉장고에 넣으면?",
+      "answerA": "꽃게탕",
+      "answerB": "게으름",
+      "correct": "B"
+    },
+    {
+      "id": 24,
+      "question": "달에서 쓰는 언어는?",
+      "answerA": "문어",
+      "answerB": "영어",
+      "correct": "A"
+    },
+    {
+      "id": 25,
+      "question": "독수리가 타오르면?",
+      "answerA": "불독수리",
+      "answerB": "이글이글",
+      "correct": "B"
+    },
+    {
+      "id": 26,
+      "question": "돌잔치를 영어로 하면?",
+      "answerA": "락페스티벌",
+      "answerB": "베이비파티",
+      "correct": "A"
+    },
+    {
+      "id": 27,
+      "question": "루이16세의 유언은?",
+      "answerA": "제목없음",
+      "answerB": "잘 있어",
+      "correct": "A"
+    },
+    {
+      "id": 28,
+      "question": "매일 미안해하는 동물은?",
+      "answerA": "오소리",
+      "answerB": "여우",
+      "correct": "A"
+    },
+    {
+      "id": 29,
+      "question": "머리 아플 때 약을 얼마나 먹어야 할까?",
+      "answerA": "두 알",
+      "answerB": "두통",
+      "correct": "B"
+    },
+    {
+      "id": 30,
+      "question": "둘리가 다니는 고등학교 이름은?",
+      "answerA": "빙하고",
+      "answerB": "빙하타고",
+      "correct": "B"
+    },
+    {
+      "id": 31,
+      "question": "마늘이 싸움에서 모두 지면?",
+      "answerA": "다진 마늘",
+      "answerB": "통마늘",
+      "correct": "A"
+    },
+    {
+      "id": 32,
+      "question": "왕과 작별할 때 하는 말은?",
+      "answerA": "안녕, 폐하",
+      "answerB": "바이킹",
+      "correct": "B"
+    },
+    {
+      "id": 33,
+      "question": "항상 추운 나라는?",
+      "answerA": "시리아",
+      "answerB": "핀란드",
+      "correct": "A"
+    },
+    {
+      "id": 34,
+      "question": "차도가 없는 나라는?",
+      "answerA": "인도",
+      "answerB": "네팔",
+      "correct": "A"
+    },
+    {
+      "id": 35,
+      "question": "이빨이 없는 곰은?",
+      "answerA": "반달곰",
+      "answerB": "젤리곰",
+      "correct": "B"
+    },
+    {
+      "id": 36,
+      "question": "할아버지가 좋아하는 돈은?",
+      "answerA": "용돈",
+      "answerB": "할머니",
+      "correct": "B"
+    },
+    {
+      "id": 37,
+      "question": "세상에서 가장 가난한 왕은?",
+      "answerA": "최저임금",
+      "answerB": "거지왕",
+      "correct": "A"
+    },
+    {
+      "id": 38,
+      "question": "우주인이 술 마시는 장소는?",
+      "answerA": "우주정거장",
+      "answerB": "스페이스바",
+      "correct": "B"
+    },
+    {
+      "id": 39,
+      "question": "소가 불에 타면?",
+      "answerA": "탄소",
+      "answerB": "불소",
+      "correct": "A"
+    },
+    {
+      "id": 40,
+      "question": "소가 노래하면?",
+      "answerA": "소송",
+      "answerB": "우타",
+      "correct": "A"
+    },
+    {
+      "id": 41,
+      "question": "소가 죽으면?",
+      "answerA": "다이소",
+      "answerB": "한우국밥",
+      "correct": "A"
+    },
+    {
+      "id": 42,
+      "question": "세상에서 가장 외로운 왕은?",
+      "answerA": "솔로몬",
+      "answerB": "고독왕",
+      "correct": "A"
+    },
+    {
+      "id": 43,
+      "question": "꽃들이 전쟁하면?",
+      "answerA": "플라워",
+      "answerB": "꽃대전",
+      "correct": "A"
+    },
+    {
+      "id": 44,
+      "question": "왼쪽으로 절하면?",
+      "answerA": "좌절",
+      "answerB": "반절",
+      "correct": "A"
+    },
+    {
+      "id": 45,
+      "question": "소금의 유통기한은?",
+      "answerA": "천일염",
+      "answerB": "유통기한 없음",
+      "correct": "A"
+    },
+    {
+      "id": 46,
+      "question": "세상에서 가장 지루한 중학교는?",
+      "answerA": "기다림중",
+      "answerB": "로딩중",
+      "correct": "B"
+    },
+    {
+      "id": 47,
+      "question": "새우가 출연하는 드라마는?",
+      "answerA": "대하드라마",
+      "answerB": "오징어게임",
+      "correct": "A"
+    },
+    {
+      "id": 48,
+      "question": "모든 사람을 일어나게 하는 숫자는?",
+      "answerA": "다섯",
+      "answerB": "열",
+      "correct": "A"
+    },
+    {
+      "id": 49,
+      "question": "비가 1시간 동안 내리면?",
+      "answerA": "기상특보",
+      "answerB": "추적 60분",
+      "correct": "B"
+    },
+    {
+      "id": 50,
+      "question": "콩 한 알을 영어로 말하면?",
+      "answerA": "원빈",
+      "answerB": "One Bean",
+      "correct": "B"
+    },
+    {
+      "id": 51,
+      "question": "햄버거의 색깔은?",
+      "answerA": "버건디",
+      "answerB": "노란색",
+      "correct": "A"
+    },
+    {
+      "id": 52,
+      "question": "있을 수도 있고 없을 수도 있는 섬은?",
+      "answerA": "독도",
+      "answerB": "아마도",
+      "correct": "B"
+    },
+    {
+      "id": 53,
+      "question": "미소의 반대말은?",
+      "answerA": "당기소",
+      "answerB": "울상",
+      "correct": "A"
+    },
+    {
+      "id": 54,
+      "question": "물고기가 싫어하는 물은?",
       "answerA": "바닷물",
-      "answerB": "선물",
+      "answerB": "그물",
       "correct": "B"
     },
     {
-      "question": "연필이 화나면?",
-      "answerA": "샤프해진다",
-      "answerB": "몽당연필",
+      "id": 55,
+      "question": "미국에 비가 내리면?",
+      "answerA": "USB",
+      "answerB": "USA",
       "correct": "A"
     },
     {
-      "question": "비가 자기소개하면?",
-      "answerA": "비입니다",
-      "answerB": "비가 와요",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 시원한 개는?",
-      "answerA": "개운하다",
-      "answerB": "진돗개",
-      "correct": "A"
-    },
-    {
-      "question": "사과가 공부를 잘하면?",
-      "answerA": "청사과",
-      "answerB": "A플사과",
+      "id": 56,
+      "question": "서울에 사는 거지 이름은?",
+      "answerA": "설거지",
+      "answerB": "서울이",
       "correct": "B"
     },
     {
-      "question": "컴퓨터가 가장 싫어하는 벌레는?",
-      "answerA": "버그",
-      "answerB": "개미",
+      "id": 57,
+      "question": "왕이 담배를 피우면?",
+      "answerA": "스모킹",
+      "answerB": "흡연왕",
       "correct": "A"
     },
     {
+      "id": 58,
+      "question": "커플이 좋아하는 곤충은?",
+      "answerA": "잠자리",
+      "answerB": "나비",
+      "correct": "A"
+    },
+    {
+      "id": 59,
+      "question": "포도가 자기소개할 때 쓰는 말은?",
+      "answerA": "포도당",
+      "answerB": "포도입니다",
+      "correct": "A"
+    },
+    {
+      "id": 60,
+      "question": "유부남이 가장 무서워하는 치킨은?",
+      "answerA": "양념치킨",
+      "answerB": "마늘치킨",
+      "correct": "B"
+    },
+    {
+      "id": 61,
+      "question": "공이 웃으면?",
+      "answerA": "풋볼",
+      "answerB": "축구공",
+      "correct": "A"
+    },
+    {
+      "id": 62,
+      "question": "왕이 넘어질 때 들리는 소리는?",
+      "answerA": "쿵왕",
+      "answerB": "킹콩",
+      "correct": "B"
+    },
+    {
+      "id": 63,
+      "question": "송혜교, 송강, 송윤아의 공통점은?",
+      "answerA": "성동일",
+      "answerB": "송씨",
+      "correct": "A"
+    },
+    {
+      "id": 64,
+      "question": "혀가 거짓말할 때 하는 말은?",
+      "answerA": "전 혀 아닙니다",
+      "answerB": "믿어 주세요",
+      "correct": "A"
+    },
+    {
+      "id": 65,
+      "question": "기독교인이 강아지가 짖는 걸 보고 하는 말은?",
+      "answerA": "아멘",
+      "answerB": "지져쓰",
+      "correct": "B"
+    },
+    {
+      "id": 66,
+      "question": "신사가 자기소개할 때 하는 말은?",
+      "answerA": "신사입니다",
+      "answerB": "신사임당",
+      "correct": "B"
+    },
+    {
+      "id": 67,
+      "question": "도둑이 가장 싫어하는 과자는?",
+      "answerA": "누네띠네",
+      "answerB": "홈런볼",
+      "correct": "A"
+    },
+    {
+      "id": 68,
+      "question": "세상에서 가장 억울한 도형은?",
+      "answerA": "사각형",
+      "answerB": "원통",
+      "correct": "B"
+    },
+    {
+      "id": 69,
       "question": "오리가 얼면?",
-      "answerA": "냉동오리",
-      "answerB": "언덕",
-      "correct": "B"
-    },
-    {
-      "question": "가장 돈이 많은 새는?",
-      "answerA": "독수리",
-      "answerB": "부엉이",
-      "correct": "B"
-    },
-    {
-      "question": "시계가 배고프면?",
-      "answerA": "밥시계",
-      "answerB": "알람시계",
+      "answerA": "언덕",
+      "answerB": "냉동오리",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 차가운 과일은?",
-      "answerA": "배",
-      "answerB": "참외",
+      "id": 70,
+      "question": "무가 눈물을 흘리면?",
+      "answerA": "무즙",
+      "answerB": "무뚝뚝",
+      "correct": "B"
+    },
+    {
+      "id": 71,
+      "question": "어부들이 싫어하는 가수는?",
+      "answerA": "배철수",
+      "answerB": "윤도현",
       "correct": "A"
     },
     {
-      "question": "사자가 시험을 잘 보면?",
+      "id": 72,
+      "question": "세상에서 가장 똑똑한 새는?",
+      "answerA": "하버드",
+      "answerB": "독수리",
+      "correct": "A"
+    },
+    {
+      "id": 73,
+      "question": "아이스크림이 죽으면?",
+      "answerA": "다이하드",
+      "answerB": "녹차",
+      "correct": "A"
+    },
+    {
+      "id": 74,
+      "question": "세상에서 가장 뜨거운 과일은?",
+      "answerA": "천도복숭아",
+      "answerB": "망고",
+      "correct": "A"
+    },
+    {
+      "id": 75,
+      "question": "세상에서 가장 예쁜 풀은?",
+      "answerA": "민들레",
+      "answerB": "뷰티풀",
+      "correct": "B"
+    },
+    {
+      "id": 76,
+      "question": "피카츄가 담배 피우기 전에 하는 말은?",
+      "answerA": "피까",
+      "answerB": "피카",
+      "correct": "A"
+    },
+    {
+      "id": 77,
+      "question": "화장실에서 막 나온 사람은?",
+      "answerA": "일본 사람",
+      "answerB": "깨끗한 사람",
+      "correct": "A"
+    },
+    {
+      "id": 78,
+      "question": "폭우가 심하게 쏟아질 때 필요한 사람은?",
+      "answerA": "기상캐스터",
+      "answerB": "비서",
+      "correct": "B"
+    },
+    {
+      "id": 79,
+      "question": "김소월이 수능에서 수리 가형을 보는 이유는?",
+      "answerA": "수학을 좋아해서",
+      "answerB": "나 보기가 역겨워",
+      "correct": "B"
+    },
+    {
+      "id": 80,
+      "question": "죽은 소가 너무 많으면?",
+      "answerA": "산소부족",
+      "answerB": "목장부족",
+      "correct": "A"
+    },
+    {
+      "id": 81,
+      "question": "물이 썩으면 나는 냄새는?",
+      "answerA": "비린내",
+      "answerB": "수상한 냄새",
+      "correct": "B"
+    },
+    {
+      "id": 82,
+      "question": "토끼들이 가장 잘하는 것은?",
+      "answerA": "토끼기",
+      "answerB": "달리기",
+      "correct": "A"
+    },
+    {
+      "id": 83,
+      "question": "사람이 먹지 못하는 간장은?",
+      "answerA": "양조간장",
+      "answerB": "애간장",
+      "correct": "B"
+    },
+    {
+      "id": 84,
+      "question": "세금을 내는 동물은?",
+      "answerA": "양",
+      "answerB": "소",
+      "correct": "A"
+    },
+    {
+      "id": 85,
+      "question": "양이 한정되어 있는 음식은?",
+      "answerA": "한정식",
+      "answerB": "양념치킨",
+      "correct": "A"
+    },
+    {
+      "id": 86,
+      "question": "소가 머리를 깎으면?",
+      "answerA": "이발소",
+      "answerB": "민소머리",
+      "correct": "A"
+    },
+    {
+      "id": 87,
+      "question": "자기만 옳다고 하는 사람이 사는 집은?",
+      "answerA": "고집",
+      "answerB": "한옥",
+      "correct": "A"
+    },
+    {
+      "id": 88,
+      "question": "덜 뚱뚱한 사람들이 모여 사는 동네는?",
+      "answerA": "반포동",
+      "answerB": "마포동",
+      "correct": "A"
+    },
+    {
+      "id": 89,
+      "question": "사람이 죽지 않는 산맥은?",
+      "answerA": "안데스산맥",
+      "answerB": "태백산맥",
+      "correct": "A"
+    },
+    {
+      "id": 90,
+      "question": "입이 평화로우면?",
+      "answerA": "마우스피스",
+      "answerB": "입조심",
+      "correct": "A"
+    },
+    {
+      "id": 91,
+      "question": "이탈리아의 날씨는?",
+      "answerA": "맑게띠",
+      "answerB": "습하게띠",
+      "correct": "B"
+    },
+    {
+      "id": 92,
+      "question": "슈퍼주니어 신동 옆에 있는 사람은?",
+      "answerA": "신동엽",
+      "answerB": "이특",
+      "correct": "A"
+    },
+    {
+      "id": 93,
+      "question": "떡집 사장이 주식을 안 하는 이유는?",
+      "answerA": "떡상할까 봐",
+      "answerB": "떡값이 올라서",
+      "correct": "A"
+    },
+    {
+      "id": 94,
+      "question": "닭에게 작은 옷을 입히면?",
+      "answerA": "병아리",
+      "answerB": "꼭끼오",
+      "correct": "B"
+    },
+    {
+      "id": 95,
+      "question": "세상에서 가장 착한 사자는?",
       "answerA": "백사자",
-      "answerB": "라이언킹",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 멋있는 사자는?",
-      "answerA": "라이언킹",
-      "answerB": "숫사자",
-      "correct": "A"
-    },
-    {
-      "question": "닭이 가장 싫어하는 채소는?",
-      "answerA": "치킨무",
-      "answerB": "오이",
-      "correct": "A"
-    },
-    {
-      "question": "소가 계단을 오르면?",
-      "answerA": "황소",
-      "answerB": "소오름",
+      "answerB": "자원봉사자",
       "correct": "B"
     },
     {
-      "question": "벌이 화나면?",
-      "answerA": "벌벌 떤다",
-      "answerB": "윙윙 난다",
+      "id": 96,
+      "question": "맥주가 죽기 전에 한 말은?",
+      "answerA": "유언비어",
+      "answerB": "건배",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 무서운 전화는?",
-      "answerA": "휴대전화",
-      "answerB": "벌벌전화",
+      "id": 97,
+      "question": "한의사가 카지노에 가면 하는 말은?",
+      "answerA": "인생은 한 방",
+      "answerB": "침 한 방",
+      "correct": "A"
+    },
+    {
+      "id": 98,
+      "question": "술 취해서 큰 소리로 노래하는 것을 사자성어로 하면?",
+      "answerA": "아빠인가",
+      "answerB": "고성방가",
       "correct": "B"
     },
     {
-      "question": "바나나가 웃으면?",
-      "answerA": "바나나우유",
-      "answerB": "바나나킥",
-      "correct": "B"
-    },
-    {
-      "question": "딸기가 회사에 입사하면?",
-      "answerA": "딸기사원",
-      "answerB": "딸기과장",
+      "id": 99,
+      "question": "개가 벽을 보고 하는 말은?",
+      "answerA": "월월",
+      "answerB": "멍멍",
       "correct": "A"
     },
     {
-      "question": "햄버거가 노래하면?",
-      "answerA": "버거송",
-      "answerB": "치즈송",
+      "id": 100,
+      "question": "전화로 세운 건물은?",
+      "answerA": "콜로세움",
+      "answerB": "전화국",
       "correct": "A"
     },
     {
-      "question": "문어가 경찰이 되면?",
-      "answerA": "문어수사대",
-      "answerB": "해양경찰",
+      "id": 101,
+      "question": "왕이 궁에 가기 싫을 때 하는 말은?",
+      "answerA": "궁시렁궁시렁",
+      "answerB": "귀찮다",
       "correct": "A"
     },
     {
-      "question": "눈이 화나면?",
-      "answerA": "눈보라",
-      "answerB": "함박눈",
+      "id": 102,
+      "question": "직접 만든 총은?",
+      "answerA": "손수건",
+      "answerB": "수제총",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 바쁜 벌은?",
-      "answerA": "바쁘벌",
-      "answerB": "꿀벌",
+      "id": 103,
+      "question": "뚱뚱한 사람들이 모여 사는 동네는?",
+      "answerA": "개포동",
+      "answerB": "반포동",
       "correct": "A"
     },
     {
-      "question": "가장 힘이 센 말은?",
-      "answerA": "경주마",
-      "answerB": "말힘",
-      "correct": "B"
-    },
-    {
-      "question": "가장 슬픈 도시는?",
-      "answerA": "서울",
-      "answerB": "울산",
-      "correct": "B"
-    },
-    {
-      "question": "가장 억울한 도형은?",
-      "answerA": "원통",
-      "answerB": "삼각형",
-      "correct": "A"
-    },
-    {
-      "question": "가장 쉬운 숫자는?",
-      "answerA": "십구만",
-      "answerB": "일",
-      "correct": "A"
-    },
-    {
-      "question": "세상에서 가장 빠른 닭은?",
-      "answerA": "치킨",
-      "answerB": "후다닥",
-      "correct": "B"
-    },
-    {
-      "question": "세상에서 가장 긴 음식은?",
-      "answerA": "라면",
-      "answerB": "국수",
-      "correct": "B"
-    },
-    {
-      "question": "세상에서 가장 더러운 집은?",
-      "answerA": "돼지우리",
-      "answerB": "쓰레기집",
-      "correct": "A"
-    },
-    {
-      "question": "왕이 넘어지면?",
-      "answerA": "킹콩",
-      "answerB": "왕창",
-      "correct": "B"
-    },
-    {
-      "question": "오징어가 춤추면?",
-      "answerA": "문어춤",
-      "answerB": "오징어댄스",
-      "correct": "B"
-    },
-    {
-      "question": "가장 무서운 비는?",
-      "answerA": "비명",
-      "answerB": "장대비",
-      "correct": "A"
-    },
-    {
+      "id": 104,
       "question": "세상에서 가장 뜨거운 바다는?",
       "answerA": "홍해",
       "answerB": "열받아",
       "correct": "B"
     },
     {
-      "question": "가장 행복한 바지는?",
-      "answerA": "웃음바지",
-      "answerB": "청바지",
+      "id": 105,
+      "question": "세상에서 가장 뜨거운 전화는?",
+      "answerA": "화상전화",
+      "answerB": "영상통화",
       "correct": "A"
     },
     {
-      "question": "펭귄이 다니는 학교는?",
-      "answerA": "남극학교",
-      "answerB": "냉방학교",
+      "id": 106,
+      "question": "말이 다리가 부러지면?",
+      "answerA": "말뚝",
+      "answerB": "목발",
       "correct": "B"
     },
     {
-      "question": "가장 가난한 왕은?",
-      "answerA": "세종대왕",
-      "answerB": "거지왕",
+      "id": 107,
+      "question": "소가 그림을 그리면?",
+      "answerA": "피카소",
+      "answerB": "화가소",
+      "correct": "A"
+    },
+    {
+      "id": 108,
+      "question": "웃가 웃으면?",
+      "answerA": "미소",
+      "answerB": "웃소",
+      "correct": "A"
+    },
+    {
+      "id": 109,
+      "question": "영어가 감기에 걸리면?",
+      "answerA": "에이치",
+      "answerB": "ABC",
+      "correct": "A"
+    },
+    {
+      "id": 110,
+      "question": "할아버지가 등산하면?",
+      "answerA": "산타 할아버지",
+      "answerB": "등산왕",
+      "correct": "A"
+    },
+    {
+      "id": 111,
+      "question": "걸어 다니는 주머니는?",
+      "answerA": "호주머니",
+      "answerB": "아주머니",
       "correct": "B"
     },
     {
-      "question": "세상에서 가장 오래 자는 동물은?",
-      "answerA": "곰",
-      "answerB": "잠만보",
+      "id": 112,
+      "question": "호주에서 쓰는 돈은?",
+      "answerA": "호주머니",
+      "answerB": "호주달러",
       "correct": "A"
     },
     {
-      "question": "가장 많이 먹는 벌레는?",
-      "answerA": "먹보벌레",
-      "answerB": "반딧불이",
+      "id": 113,
+      "question": "서울에서 땅값이 가장 싼 동네는?",
+      "answerA": "일원동",
+      "answerB": "중구",
       "correct": "A"
     },
     {
-      "question": "세상에서 가장 놀라운 오리는?",
-      "answerA": "깜짝오리",
-      "answerB": "오리무중",
+      "id": 114,
+      "question": "세상에서 가장 긴 음식은?",
+      "answerA": "참기름",
+      "answerB": "국수",
+      "correct": "A"
+    },
+    {
+      "id": 115,
+      "question": "차를 발로 차면?",
+      "answerA": "카놀라유",
+      "answerB": "교통사고",
+      "correct": "A"
+    },
+    {
+      "id": 116,
+      "question": "다이어트하는 사람이 여름을 싫어하는 이유는?",
+      "answerA": "비만 와서",
+      "answerB": "더워서",
+      "correct": "A"
+    },
+    {
+      "id": 117,
+      "question": "아이스크림이 가수가 될 수 없는 이유는?",
+      "answerA": "노래를 못해서",
+      "answerB": "녹음이 안 돼서",
+      "correct": "B"
+    },
+    {
+      "id": 118,
+      "question": "완전 야한 가수는?",
+      "answerA": "비",
+      "answerB": "다비치",
+      "correct": "B"
+    },
+    {
+      "id": 119,
+      "question": "엄마가 길을 잃으면?",
+      "answerA": "맘마미아",
+      "answerB": "엄마 어디가",
+      "correct": "A"
+    },
+    {
+      "id": 120,
+      "question": "소가 구걸하면?",
+      "answerA": "우거지",
+      "answerB": "소지갑",
       "correct": "A"
     }
   ]
@@ -969,7 +1459,6 @@ const MC_IMAGES = [
 
 const els = {
   score: document.querySelector("#score"),
-  stageLabel: document.querySelector("#stageLabel"),
   eunwoo: document.querySelector("#eunwoo"),
   mc: document.querySelector("#mc"),
   startBtn: document.querySelector("#startBtn"),
@@ -1045,9 +1534,20 @@ function setEunwooState(state) {
   els.eunwoo.className = `sprite eunwoo ${state}`;
 }
 
+function getTargetScore() {
+  return STAGE_TARGETS[currentStage];
+}
+
 function updateUI() {
-  els.score.textContent = `SCORE ${score} / ${TARGET_SCORE}`;
-  els.stageLabel.textContent = `${currentStage + 1}단계`;
+  const targetScore = getTargetScore();
+  const totalQuestions = STAGES[currentStage].length;
+  const displayedQuiz = Math.min(quizCursor + 1, totalQuestions);
+
+  els.score.innerHTML = `
+    <span class="hud-stage">Stage ${currentStage + 1}</span>
+    <span>Score ${score} / ${targetScore}</span>
+    <span>Quiz ${displayedQuiz} / ${totalQuestions}</span>
+  `;
   els.mc.style.backgroundImage = `url("${MC_IMAGES[currentStage]}")`;
 }
 
@@ -1122,7 +1622,7 @@ async function chooseAnswer(choice) {
     playCorrectSound();
     showMessage("정답!");
     await wait(REACTION_DURATION);
-    if (score >= TARGET_SCORE) {
+    if (score >= getTargetScore()) {
       showStageComplete();
       return;
     }
@@ -1144,7 +1644,7 @@ function showStageComplete() {
   setEunwooState("idle");
   if (currentStage < STAGES.length - 1) {
     els.finishTitle.textContent = `${currentStage + 1}단계 성공!`;
-    els.finishText.textContent = "퀴즈 5개를 모두 맞혔어요!";
+    els.finishText.textContent = `퀴즈 ${getTargetScore()}개를 모두 맞혔어요!`;
     els.nextBtn.textContent = "다음 단계";
   } else {
     els.finishTitle.textContent = "모든 단계 성공!";
