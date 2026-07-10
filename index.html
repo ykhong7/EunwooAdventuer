@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>은우의모험</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section id="game" class="game" aria-label="은우의모험 게임 화면">
+      <div id="score" class="score">SCORE 0 / 5</div>
+      <div id="stageLabel" class="stage-label">1단계</div>
+      <button id="resetBtn" class="reset-btn" type="button">다시 시작</button>
+
+      <div class="stage">
+        <div id="eunwoo" class="sprite eunwoo idle" aria-label="은우"></div>
+        <div id="mc" class="sprite mc" aria-label="MC"></div>
+      </div>
+
+      <div id="message" class="message hidden"></div>
+
+      <div id="quizLayer" class="quiz-layer hidden" aria-live="polite">
+        <div id="mcBubble" class="speech-bubble mc-bubble">
+          <span class="speaker">MC</span>
+          <div id="question" class="question-text">문제</div>
+        </div>
+
+        <div id="eunwooBubble" class="speech-bubble eunwoo-bubble">
+          <span class="speaker">은우의 답변</span>
+          <div class="answers">
+            <button id="answerA" class="answer-btn" type="button"></button>
+            <button id="answerB" class="answer-btn" type="button"></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="finishModal" class="overlay hidden" role="dialog" aria-modal="true">
+        <div class="finish-card">
+          <div id="finishSprite" class="finish-sprite"></div>
+          <h2 id="finishTitle">1단계 성공!</h2>
+          <p id="finishText">퀴즈 5개를 모두 맞혔어요!</p>
+          <button id="nextBtn" class="main-btn" type="button">다음 단계</button>
+        </div>
+      </div>
+
+      <button id="startBtn" class="main-btn start-btn" type="button">게임 시작</button>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
